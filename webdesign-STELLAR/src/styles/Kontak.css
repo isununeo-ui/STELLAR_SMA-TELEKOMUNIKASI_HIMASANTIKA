@@ -1,0 +1,250 @@
+/* Style informasi kontak, tautan sosial, dan form pesan. */
+/* Container Utama */
+.kontak-section {
+  padding: 128px 5%;
+  background-image: radial-gradient(circle at 1px 1px, var(--section-line) 1.5px, transparent 1.6px), linear-gradient(145deg, var(--bg-main), var(--bg-elevated));
+  background-size: 32px 32px, auto;
+  color: var(--text-main);
+  position: relative;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Ornamen Cahaya Bawah */
+.bottom-glow {
+  top: auto;
+  bottom: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--page-glow) 0%, transparent 70%);
+}
+
+.kontak-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid Layout untuk 2 Kolom */
+.kontak-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1220px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.kontak-info,
+.kontak-form-wrapper {
+  padding: 46px;
+}
+
+/* Kustomisasi Kartu Info (Kiri) */
+.kontak-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: var(--text-main);
+}
+
+.kontak-desc {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--palette-coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  flex-shrink: 0;
+}
+
+.info-text h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 5px;
+}
+
+.info-text p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Sosial Media */
+.social-media h4 {
+  font-size: 15px;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-subtle);
+}
+
+.social-link:hover {
+  background: var(--palette-coral);
+  color: var(--text-inverse);
+  transform: translateY(-5px);
+  border-color: var(--palette-coral);
+  box-shadow: 0 5px 15px rgba(224, 122, 95, 0.3);
+}
+
+/* ========================================= */
+/* STYLING FORMULIR (Kolom Kanan)            */
+/* ========================================= */
+
+.kontak-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  color: var(--text-main);
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Efek menyala saat form di-klik/diketik */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--palette-coral);
+  box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.18);
+  background: var(--bg-surface-solid);
+}
+
+/* Tombol Submit */
+.submit-btn {
+  margin-top: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--palette-red), var(--palette-coral));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(195, 80, 59, 0.25);
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(37, 99, 235, 0.4);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .arrow-icon {
+  transform: translateX(5px); /* Panah bergerak ke kanan saat di-hover */
+}
+
+.form-success {
+  padding: 12px 14px;
+  border-left: 3px solid var(--palette-coral);
+  background: var(--bg-elevated);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive untuk layar kecil / HP */
+@media (max-width: 900px) {
+  .kontak-container {
+    grid-template-columns: 1fr; /* Form akan turun ke bawah info kontak */
+  }
+}
+
+@media (max-width: 560px) {
+  .kontak-section {
+    padding: 88px 5%;
+  }
+
+  .kontak-container {
+    gap: 18px;
+  }
+
+  .kontak-info,
+  .kontak-form-wrapper {
+    padding: 30px;
+  }
+
+  .info-item {
+    gap: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 13px 14px;
+  }
+}

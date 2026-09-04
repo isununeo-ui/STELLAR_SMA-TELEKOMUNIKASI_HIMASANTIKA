@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* Token desain utama dipakai bersama oleh semua halaman dan komponen. */
+:root {
+	--palette-blue: #101869;
+	--palette-red: #c3503b;
+	--palette-coral: #e07a5f;
+	--palette-blue-soft: #3155c8;
+	--palette-light: #f7f8fc;
+	--palette-dark: #111827;
+	--palette-black: #070b14;
+	--bg-main: #f7f8fc;
+	--bg-surface: rgba(255, 255, 255, 0.86);
+	--bg-surface-solid: #ffffff;
+	--bg-elevated: #eef1f8;
+	--text-main: #182033;
+	--text-muted: #5d6678;
+	--text-inverse: #ffffff;
+	--border-subtle: rgba(16, 24, 105, 0.12);
+	--shadow-color: rgba(16, 24, 105, 0.12);
+	--hero-overlay: linear-gradient(90deg, rgba(247, 248, 252, 0.96) 12%, rgba(247, 248, 252, 0.58) 48%, rgba(247, 248, 252, 0.08) 100%);
+	--page-glow: rgba(224, 122, 95, 0.13);
+	--accent-glow: rgba(16, 24, 105, 0.16);
+	--section-line: rgba(16, 24, 105, 0.08);
+	color-scheme: light;
+}
+
+[data-theme='dark'] {
+	/* Nilai token yang berubah ketika mode gelap aktif. */
+	--bg-main: #0b1020;
+	--bg-surface: rgba(18, 27, 48, 0.88);
+	--bg-surface-solid: #121b30;
+	--bg-elevated: #1a2640;
+	--text-main: #f4f6fb;
+	--text-muted: #aeb8cb;
+	--text-inverse: #ffffff;
+	--border-subtle: rgba(190, 204, 239, 0.16);
+	--shadow-color: rgba(0, 0, 0, 0.3);
+	--hero-overlay: linear-gradient(90deg, rgba(11, 16, 32, 0.96) 12%, rgba(11, 16, 32, 0.7) 48%, rgba(11, 16, 32, 0.18) 100%);
+	--page-glow: rgba(224, 122, 95, 0.11);
+	--accent-glow: rgba(102, 139, 255, 0.18);
+	--section-line: rgba(190, 204, 239, 0.1);
+	color-scheme: dark;
+}
+
+* {
+	/* Reset dasar agar ukuran dan jarak elemen konsisten di semua browser. */
+	box-sizing: border-box;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	/* Latar dan warna teks mengikuti token tema yang sedang aktif. */
+	margin: 0;
+	padding: 0;
+	min-width: 320px;
+	font-family: 'DM Sans', sans-serif;
+	background:
+		radial-gradient(circle at top left, rgba(81, 110, 255, 0.12), transparent 22%),
+		radial-gradient(circle at bottom right, rgba(224, 122, 95, 0.14), transparent 26%),
+		radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.72), transparent 30%),
+		linear-gradient(135deg, #f7f9ff 0%, #eef3ff 42%, #f7f5fb 100%);
+	background-attachment: fixed;
+	background-size: cover;
+	color: var(--text-main);
+	transition: background-color 0.35s ease, color 0.35s ease;
+	position: relative;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background-image:
+		linear-gradient(115deg, transparent 0 49.7%, rgba(16, 24, 105, 0.035) 49.8% 50.2%, transparent 50.3%),
+		linear-gradient(25deg, transparent 0 49.7%, rgba(16, 24, 105, 0.025) 49.8% 50.2%, transparent 50.3%);
+	background-size: 160px 160px;
+	pointer-events: none;
+	z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+body::after {
+	/* Dua glow lembut memberi kedalaman tanpa mengganggu isi halaman. */
+	content: '';
+	position: fixed;
+	z-index: -1;
+	width: 38vw;
+	height: 38vw;
+	border-radius: 50%;
+	filter: blur(90px);
+	pointer-events: none;
+	opacity: 0.9;
+}
+
+body::after {
+	top: -18vw;
+	right: -10vw;
+	background: rgba(81, 110, 255, 0.18);
+}
+
+body::before {
+	bottom: -18vw;
+	left: -10vw;
+	background: rgba(224, 122, 95, 0.16);
+}
+
+button,
+input,
+textarea {
+	/* Kontrol form mengikuti font aplikasi. */
+	font: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+#root {
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.section-icon-cloud {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	color: var(--palette-blue);
+	opacity: 0.13;
+}
+
+.section-icon-cloud svg {
+	position: absolute;
+	font-size: clamp(2rem, 4vw, 4.5rem);
+	filter: drop-shadow(0 10px 14px var(--shadow-color));
+	animation: sectionIconFloat 8s ease-in-out infinite;
+}
+
+.section-icon-cloud svg:nth-child(2) {
+	color: var(--palette-coral);
+	animation-delay: -2.5s;
+}
+
+.section-icon-cloud svg:nth-child(3) {
+	animation-delay: -5s;
+}
+
+.about-icon-cloud svg:nth-child(1) { top: 18%; left: 5%; }
+.about-icon-cloud svg:nth-child(2) { top: 58%; right: 8%; }
+.about-icon-cloud svg:nth-child(3) { bottom: 12%; left: 28%; }
+.proker-icon-cloud svg:nth-child(1) { top: 15%; right: 8%; }
+.proker-icon-cloud svg:nth-child(2) { bottom: 16%; left: 7%; }
+.proker-icon-cloud svg:nth-child(3) { bottom: 8%; right: 34%; }
+.galeri-icon-cloud svg:nth-child(1) { top: 14%; left: 7%; }
+.galeri-icon-cloud svg:nth-child(2) { bottom: 10%; right: 7%; }
+.org-icon-cloud svg:nth-child(1) { top: 12%; right: 8%; }
+.org-icon-cloud svg:nth-child(2) { bottom: 10%; left: 7%; }
+.kontak-icon-cloud svg:nth-child(1) { top: 16%; left: 8%; }
+.kontak-icon-cloud svg:nth-child(2) { bottom: 13%; right: 9%; }
+
+@keyframes sectionIconFloat {
+	0%, 100% { transform: translate3d(0, 0, 0) rotate(-6deg); }
+	50% { transform: translate3d(0, -12px, 0) rotate(6deg); }
+}
+
+@media (max-width: 560px) {
+	.section-icon-cloud {
+		opacity: 0.09;
+	}
+}

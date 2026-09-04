@@ -1,0 +1,52 @@
+.divisions-page {
+  min-height: auto;
+  padding: 92px 6vw 72px;
+  color: var(--text-main);
+  background: linear-gradient(135deg, var(--bg-main), var(--bg-elevated));
+}
+
+.divisions-inner { max-width: 1220px; margin: 0 auto; }
+.divisions-heading { display: grid; grid-template-columns: .7fr 1fr 1.2fr; gap: 24px; align-items: end; margin-bottom: 34px; }
+.divisions-heading .section-kicker { color: var(--palette-red); font-size: .75rem; font-weight: 700; letter-spacing: .2em; }
+.division-index { color: var(--palette-coral); font: 700 .76rem 'Space Grotesk', sans-serif; letter-spacing: .12em; }
+.divisions-heading h2 { font-size: clamp(2rem, 3.7vw, 3.7rem); line-height: .98; letter-spacing: 0; }
+.divisions-heading h2 span { color: var(--palette-coral); }
+.divisions-heading > p:last-child { max-width: 280px; color: var(--text-muted); line-height: 1.7; }
+.division-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.division-card:first-child { grid-column: 1 / -1; width: min(100%, 280px); justify-self: center; }
+.division-card { aspect-ratio: 1 / 1.08; position: relative; overflow: hidden; display: block; padding: 0; border: 1px solid rgba(16, 24, 105, .12); border-radius: 12px; background: #fff; color: var(--text-main); text-align: left; cursor: pointer; box-shadow: 0 5px 12px rgba(16, 24, 105, .07), 0 18px 34px rgba(16, 24, 105, .07); animation: divisionReveal .7s both; animation-delay: calc(var(--card-index) * 70ms); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+.division-card::after { position: absolute; inset: 8px; border: 1px solid rgba(255,255,255,.65); border-radius: 7px; content: ''; opacity: 0; transform: scale(.96); transition: .35s ease; pointer-events: none; }
+.division-card:hover, .division-card:focus-visible { border-color: rgba(224, 122, 95, .55); box-shadow: 0 10px 18px rgba(16, 24, 105, .09), 0 24px 40px rgba(16, 24, 105, .13); transform: translateY(-6px); }
+.division-card:hover::after, .division-card:focus-visible::after { opacity: 1; transform: scale(1); }
+.division-card img { display: block; width: 100%; height: 126px; padding: 10px 16px; background: #f8f9fc; object-fit: contain; object-position: center; transition: transform .7s cubic-bezier(.2,.8,.2,1), filter .7s ease; }
+.division-card:hover img, .division-card:focus-visible img { transform: scale(1.08) rotate(1deg); filter: saturate(1.2); }
+.division-overlay { position: absolute; z-index: 1; inset: 0 0 auto; height: 126px; background: linear-gradient(180deg, rgba(7,11,20,.02), rgba(7,11,20,.38)); }
+.division-number { position: absolute; z-index: 2; top: 14px; right: 16px; color: #fff; font: 700 .72rem 'Space Grotesk', sans-serif; letter-spacing: .12em; }
+.division-meta, .division-open { position: absolute; z-index: 1; }
+.division-meta { left: 16px; right: 16px; bottom: 17px; display: grid; gap: 7px; }
+.division-meta small { color: var(--palette-coral); font-size: .63rem; font-weight: 700; letter-spacing: .16em; }
+.division-meta strong { max-width: 190px; color: #182033; font: 600 1rem/1.1 'Space Grotesk', sans-serif; }
+.division-open { right: 16px; bottom: 17px; display: flex; gap: 6px; align-items: center; color: var(--palette-blue); font-size: .68rem; font-weight: 700; opacity: 0; transform: translateX(-8px); transition: .3s ease; }
+.division-card:hover .division-open, .division-card:focus-visible .division-open { opacity: 1; transform: translateX(0); }
+.divisions-footnote { display: flex; gap: 18px; align-items: center; margin-top: 22px; color: var(--text-muted); font-size: .76rem; }
+.divisions-footnote span { color: var(--palette-blue); font-weight: 700; letter-spacing: .12em; }
+.divisions-footnote p { flex: 1; }
+.divisions-footnote svg { color: var(--palette-coral); }
+.division-dialog-backdrop { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; padding: 22px; background: rgba(7,11,20,.72); backdrop-filter: blur(10px); animation: fadeIn .25s ease both; }
+.division-dialog { position: relative; width: min(680px, 100%); max-height: min(740px, 90vh); overflow: auto; padding: 38px; border: 1px solid rgba(255,255,255,.16); border-radius: 12px; background: var(--bg-surface-solid); box-shadow: 0 25px 80px rgba(0,0,0,.35); animation: dialogIn .4s cubic-bezier(.2,.9,.2,1) both; }
+.division-dialog > img { width: 74px; height: 74px; margin-bottom: 22px; border-radius: 50%; object-fit: cover; border: 3px solid var(--palette-coral); }
+.division-dialog-label { display: block; color: var(--palette-coral); font: 700 .72rem 'Space Grotesk', sans-serif; letter-spacing: .16em; }
+.division-dialog h3 { margin: 8px 0 12px; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1; }
+.division-dialog-description { color: var(--text-muted); line-height: 1.7; }
+.division-dialog-close { position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; border: 1px solid var(--border-subtle); border-radius: 50%; background: transparent; color: var(--text-main); cursor: pointer; }
+.division-duties { display: grid; gap: 14px; margin-top: 26px; }
+.duty-item { display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding-top: 14px; border-top: 1px solid var(--border-subtle); }
+.duty-item > span { color: var(--palette-coral); font: 700 .75rem 'Space Grotesk', sans-serif; }
+.duty-item p { color: var(--text-muted); line-height: 1.6; }
+.duty-item strong { display: block; margin-bottom: 3px; color: var(--text-main); }
+@keyframes divisionReveal { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes dialogIn { from { opacity: 0; transform: translateY(28px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (max-width: 980px) { .division-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px) { .divisions-heading { grid-template-columns: 1fr 1fr; } .divisions-heading > p:last-child { grid-column: 1 / -1; } .division-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .divisions-page { padding: 72px 20px 54px; } .divisions-heading { display: block; } .division-index { margin: 14px 0; } .divisions-heading h2 { margin-bottom: 16px; } .division-grid { gap: 12px; } .division-card { aspect-ratio: 1 / 1.04; } .division-card img, .division-overlay { height: 116px; } .division-open { opacity: 1; transform: none; } .divisions-footnote { align-items: flex-start; flex-direction: column; gap: 10px; } .division-dialog { padding: 28px 22px; } }

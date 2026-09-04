@@ -1,0 +1,238 @@
+/* Style bagan struktur organisasi dan responsivitasnya. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+.org-container {
+    background-image: radial-gradient(circle at 85% 20%, var(--page-glow), transparent 24%), linear-gradient(145deg, var(--bg-main), var(--bg-elevated));
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 120px 20px;
+    overflow-x: auto;
+}
+
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: max-content; /* Memastikan chart melebar sesuai konten */
+}
+
+.org-heading {
+    width: min(100%, 700px);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.org-heading .section-kicker {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--palette-red);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.org-heading h2 {
+    margin-bottom: 10px;
+    color: var(--text-main);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.org-heading h2 span {
+    color: var(--palette-coral);
+}
+
+.org-heading p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+    .membership-content {
+        width: min(100%, 760px);
+    }
+
+    .membership-notice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 48px;
+        border: 1px solid var(--border-subtle);
+        border-radius: 18px;
+        background: var(--bg-surface);
+        box-shadow: 0 12px 28px var(--shadow-color);
+        text-align: center;
+    }
+
+    .membership-notice > svg {
+        color: var(--palette-coral);
+        font-size: 3rem;
+    }
+
+    .membership-notice h3 {
+        color: var(--palette-blue);
+        font-size: 1.5rem;
+    }
+
+    .membership-notice p {
+        max-width: 560px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .membership-notice a {
+        color: var(--palette-red);
+        font-weight: 700;
+    }
+
+    @media (max-width: 560px) {
+        .membership-notice {
+            padding: 30px 24px;
+        }
+    }
+
+.node {
+    background: linear-gradient(135deg, var(--bg-surface-solid), var(--bg-elevated));
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 14px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    position: relative;
+    min-width: 140px;
+}
+
+.node span {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.penasehat-node {
+    height: fit-content;
+}
+
+.dual-node {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--bg-surface-solid);
+    box-shadow: 0 8px 20px var(--shadow-color);
+    min-width: 180px;
+}
+
+.dual-node .box {
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pimpinan-top {
+    border-bottom: 1px solid var(--border-subtle);
+    background: linear-gradient(135deg, var(--bg-surface-solid), var(--bg-elevated));
+}
+
+.pimpinan-bottom {
+    background: var(--bg-elevated);
+}
+
+.level-1, .level-2, .level-3, .level-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.level-1 { gap: 40px; }
+.level-2 { gap: 60px; }
+.level-3 { gap: 15px; flex-wrap: wrap; }
+.level-4 { gap: 30px; flex-wrap: wrap; }
+
+/* --- Styling Baru untuk Departemen dengan Logo --- */
+.dept-node {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Rata kiri agar logo sejajar */
+    gap: 10px; /* Jarak antara logo dan teks */
+    padding: 12px 15px;
+    min-width: 180px; /* Sedikit diperlebar untuk memuat logo */
+}
+
+.dept-node i {
+    font-size: 16px;
+    color: var(--palette-coral);
+    width: 20px; /* Memberikan ruang tetap untuk ikon agar teks sejajar */
+    text-align: center;
+}
+
+.dept-node span {
+    flex: 1; /* Teks mengisi sisa ruang */
+    text-align: left;
+}
+/* ----------------------------------------------- */
+
+.staff-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 25px;
+    background-color: var(--palette-coral);
+}
+
+.staff-box {
+    min-width: 90px;
+    padding: 8px;
+}
+
+.staff-box span, 
+.kelas-box span {
+    font-size: 11px;
+}
+
+.kelas-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.kelas-box {
+    min-width: 70px;
+    padding: 6px;
+}
+
+@media (max-width: 700px) {
+    .org-container {
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 88px 16px;
+    }
+
+    .org-chart {
+        margin: 0 auto;
+    }
+
+    .level-1,
+    .level-2 {
+        gap: 18px;
+    }
+}

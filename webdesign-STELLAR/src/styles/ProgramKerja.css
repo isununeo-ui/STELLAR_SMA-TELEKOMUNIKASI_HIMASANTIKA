@@ -1,0 +1,304 @@
+/* Style katalog program kerja dan kartu agenda HIMASANTIKA. */
+.proker-section {
+  padding: 128px 5%;
+  background-image: radial-gradient(circle, var(--section-line) 1.5px, transparent 1.6px), linear-gradient(135deg, var(--bg-main), var(--bg-elevated));
+  background-size: 26px 26px, auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.proker-section::before {
+  content: '03';
+  position: absolute;
+  left: 5%;
+  top: 42px;
+  color: var(--section-line);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(6rem, 14vw, 12rem);
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.proker-section::after {
+  content: 'HIMASANTIKA / 2026';
+  position: absolute;
+  right: 5%;
+  bottom: 34px;
+  color: var(--section-line);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.section-kicker {
+  margin-bottom: 14px;
+  color: var(--palette-red);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* --- Header Section --- */
+.proker-header {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 700px;
+}
+
+.proker-header h2 {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: var(--palette-blue);
+  margin-bottom: 10px;
+}
+
+.highlight-text {
+  color: var(--palette-coral);
+}
+
+.proker-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.proker-header::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 24px auto 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--palette-blue), var(--palette-coral));
+}
+
+.header-line {
+  display: none;
+}
+
+/* --- Grid Layout untuk Card --- */
+.proker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px; /* Membatasi lebar maksimal agar tidak terlalu melar di layar besar */
+}
+
+/* --- Card Styling --- */
+.proker-card {
+  background-color: var(--bg-surface-solid);
+  border-radius: 18px;
+  padding: 34px 30px;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: all 0.3s ease;
+  border-bottom: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.proker-card::after {
+  content: '';
+  position: absolute;
+  right: -32px;
+  bottom: -32px;
+  width: 110px;
+  height: 110px;
+  border: 1px solid var(--section-line);
+  border-radius: 50%;
+  box-shadow: 0 0 0 12px var(--section-line), 0 0 0 24px transparent;
+  pointer-events: none;
+}
+
+.proker-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, var(--palette-blue), var(--palette-coral));
+}
+
+.proker-card-top {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.program-number {
+  color: var(--text-muted);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.proker-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px var(--shadow-color);
+  border-bottom: 4px solid var(--palette-red);
+}
+
+.proker-card:focus-visible {
+  outline: 3px solid var(--palette-coral);
+  outline-offset: 5px;
+}
+
+.proker-icon {
+  font-size: 1.6rem;
+  background-color: var(--palette-blue);
+  color: var(--text-inverse);
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  margin-bottom: 0;
+  box-shadow: 0 8px 18px rgba(16, 24, 105, 0.22);
+}
+
+.proker-icon svg {
+  width: 1.35em;
+  height: 1.35em;
+}
+
+.proker-content h3 {
+  font-size: 1.25rem;
+  color: var(--palette-blue);
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.proker-content h4 {
+  font-size: 0.9rem;
+  color: var(--palette-red);
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.proker-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(7, 11, 20, 0.68);
+  backdrop-filter: blur(8px);
+}
+
+.proker-modal {
+  position: relative;
+  width: min(100%, 560px);
+  padding: 48px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  background: var(--bg-surface-solid);
+  color: var(--text-main);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  animation: prokerModalIn 0.28s ease-out both;
+}
+
+.proker-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.proker-modal-number {
+  color: var(--palette-coral);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.proker-modal-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 22px 0 24px;
+  border-radius: 16px;
+  background: var(--palette-blue);
+  color: var(--text-inverse);
+  font-size: 1.6rem;
+  box-shadow: 0 10px 22px var(--shadow-color);
+}
+
+.proker-modal h3 {
+  margin-bottom: 8px;
+  color: var(--palette-blue);
+  font-size: 1.8rem;
+}
+
+.proker-modal h4 {
+  margin-bottom: 18px;
+  color: var(--palette-red);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proker-modal p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@keyframes prokerModalIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.proker-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  overflow-wrap: anywhere;
+}
+
+/* --- Responsif --- */
+@media (max-width: 768px) {
+  .proker-header h2 {
+    font-size: 2rem;
+  }
+  .proker-section {
+    padding: 60px 5%;
+  }
+
+  .proker-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .proker-card {
+    padding: 30px 24px;
+  }
+}

@@ -1,0 +1,308 @@
+/* Style section About, kartu overview, visi, dan misi organisasi. */
+/* Container Utama */
+.about-modern-section {
+  padding: 128px 5%;
+  background-image: radial-gradient(circle at 12% 18%, var(--page-glow), transparent 28%), linear-gradient(145deg, var(--bg-main), var(--bg-elevated));
+  color: var(--text-main);
+  position: relative;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.about-modern-section::after {
+  content: '+  +  +  +  +';
+  position: absolute;
+  left: 5%;
+  bottom: 58px;
+  color: var(--palette-coral);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.9em;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Ornamen Background */
+.glow-background {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.top-glow {
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-header::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 28px auto 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--palette-blue), var(--palette-coral));
+}
+
+.badge-text {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--palette-coral);
+  margin-bottom: 15px;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, var(--palette-blue-soft), var(--palette-coral));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.about-bento-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1220px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Styling Kartu - Glassmorphism Halus */
+.bento-card {
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 46px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--palette-coral);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.bento-overview {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: linear-gradient(145deg, var(--bg-surface-solid), var(--bg-surface));
+}
+
+.bento-overview::after {
+  content: '01';
+  position: absolute;
+  right: 32px;
+  bottom: 18px;
+  color: var(--section-line);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Tipografi di dalam Kartu */
+.card-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--palette-coral);
+  margin-bottom: 25px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.section-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.section-text strong {
+  color: var(--palette-coral);
+  font-weight: 700;
+}
+
+/* Header Visi Misi */
+.vm-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.vm-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.icon-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.vision-icon {
+  background: linear-gradient(135deg, var(--palette-blue), var(--palette-blue-soft));
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+.mission-icon {
+  background: linear-gradient(135deg, var(--palette-red), var(--palette-coral));
+  box-shadow: 0 10px 20px rgba(195, 80, 59, 0.25);
+}
+
+/* List Misi Custom */
+.mission-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mission-list li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.mission-list li::before {
+  content: '✦'; /* Icon bullet yang lebih modern */
+  position: absolute;
+  left: 0;
+  top: 0px;
+  color: var(--palette-coral);
+  font-size: 18px;
+}
+
+/* ========================================= */
+/* ANIMASI KEYFRAMES (RAHASIA TAMPIL KELAS ATAS) */
+/* ========================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.animate-slide-up.is-visible {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Delay Animasi agar muncul berurutan (Staggered Effect) */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .about-bento-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .bento-overview {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .bento-card {
+    padding: 46px;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-modern-section {
+    padding: 88px 5%;
+  }
+
+  .about-header {
+    margin-bottom: 42px;
+  }
+
+  .hero-title {
+    font-size: 2.45rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .bento-card {
+    padding: 30px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
