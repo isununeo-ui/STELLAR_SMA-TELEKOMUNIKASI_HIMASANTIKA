@@ -39,7 +39,7 @@ const About = () => {
             <h3>Visi Kami</h3>
           </div>
           <p className="section-text">
-            Informasi visi resmi periode 2026 belum ditemukan pada sumber publik UMC atau akun resmi HIMASANTIKA. Bagian ini akan diperbarui setelah organisasi mempublikasikan pernyataan resminya.
+           Menciptakan himpunan yang lebih berkembang, kolaboratif, dan berdampak bagi seluruh mahasiswa Teknik Informatika.Menjadi wadah bersama untuk belajar, berkarya, serta memberikan kontribusi nyata, baik di internal kampus maupun pengabdian masyarakat.Menjaga keberlanjutan organisasi melalui pengelolaan evaluasi internal, peninjauan pedoman organisasi, serta penegakan kedisiplinan pengurus yang selaras dengan visi dasar himpunan.
           </p>
         </div>
 
