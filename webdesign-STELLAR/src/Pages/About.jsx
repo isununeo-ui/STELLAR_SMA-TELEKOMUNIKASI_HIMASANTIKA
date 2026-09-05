@@ -24,6 +24,7 @@ const About = () => {
           <h2 className="section-title">Lebih dari Sekadar <br/> Organisasi Kampus.</h2>
           <p className="section-text">
             <strong>HIMASANTIKA</strong> adalah Himpunan Mahasiswa Jurusan Teknik Informatika Universitas Muhammadiyah Cirebon.
+          </p>
         </div>
 
         {/* Kartu visi organisasi. */}
@@ -67,3 +68,4 @@ const About = () => {
 };
 
 export default About;
+
