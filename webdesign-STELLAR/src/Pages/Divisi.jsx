@@ -102,7 +102,7 @@ export default function Divisi() {
 
         <div className="divisions-footnote">
           <span>HIMASANTIKA / UMC</span>
-          <p>Daftar dan uraian tugas disusun dari data kepengurusan yang diberikan untuk halaman ini.</p>
+          <p></p>
           <FaChevronDown aria-hidden="true" />
         </div>
       </div>
