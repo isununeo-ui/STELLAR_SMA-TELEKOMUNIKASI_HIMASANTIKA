@@ -24,9 +24,6 @@ const About = () => {
           <h2 className="section-title">Lebih dari Sekadar <br/> Organisasi Kampus.</h2>
           <p className="section-text">
             <strong>HIMASANTIKA</strong> adalah Himpunan Mahasiswa Jurusan Teknik Informatika Universitas Muhammadiyah Cirebon.
-            <br/><br/>
-            Informasi kegiatan yang terverifikasi pada 2026 mencakup kolaborasi Teknologi untuk Desa bersama HMTI UMC dan sembilan kampus Muhammadiyah 'Aisyiyah, sebagaimana diberitakan di situs resmi UMC.
-          </p>
         </div>
 
         {/* Kartu visi organisasi. */}
