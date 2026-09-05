@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaMoon, FaSun, FaTimes } from 'react-icons/fa';
 import '../styles/Navbar.css';
-import logoHimasantika from '../assets/logo.jpg';
+import logoHimasantika from '../assets/Logo.jpg';
 import logoPermikomnas from '../assets/Logo Permikomnas.jpg';
 
 function Navbar() {
